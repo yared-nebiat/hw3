@@ -83,8 +83,23 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+    if (head == nullptr) {
+        return nullptr;
+    }
 
+    head->next = llfilter(head->next, pred);
 
+    // Check the current node with the predicate
+    if (pred(head->val)) {
+        Node* temp = head;
+        head = head->next;
+        delete temp; 
+        return head;
+    }
+
+    // If current node is not to be deleted, return it as head
+    return head;
 }
+
 
 #endif

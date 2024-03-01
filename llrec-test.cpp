@@ -87,7 +87,17 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+    Node* smaller = nullptr;
+    Node* larger = nullptr;
 
+    llpivot(head, smaller, larger, 10);
+
+    std::cout << "Original list: ";
+    print(head); // This will print nothing as head is set to nullptr
+    std::cout << "Smaller than or equal to pivot: ";
+    print(smaller);
+    std::cout << "Larger than pivot: ";
+    print(larger);
 
     
     return 0;
